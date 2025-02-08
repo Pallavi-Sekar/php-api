@@ -10,7 +10,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 if ($method === 'GET') {
     try {
         $stmt = $pdo->prepare(
-            "SELECT DISTINCT p.product_id, p.description, p.image, p.pricing, p.shipping_cost
+            "SELECT DISTINCT p.product_id,c.text p.description, p.image, p.pricing, p.shipping_cost
             FROM Product p
             JOIN Comments c ON p.product_id = c.product_id"
         );
